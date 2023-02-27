@@ -22,6 +22,7 @@ public class CustomerMapper {
         var customerDto = new CustomerEntityDto();
 
         customerDto.setId(customer.getId());
+        customerDto.setName(customer.getName());
         customerDto.setSurname(customer.getSurname());
         customerDto.setBirthday(customer.getBirthday());
         customerDto.setLoyal(customer.getLoyal());
@@ -46,6 +47,7 @@ public class CustomerMapper {
     public static Customer toCustomerFromEntityDto(CustomerEntityDto customerDto) {
         var customer = new Customer();
 
+        customer.setName(customerDto.getName());
         customer.setSurname(customerDto.getSurname());
         customer.setBirthday(customerDto.getBirthday());
         customer.setLoyal(customerDto.getLoyal());

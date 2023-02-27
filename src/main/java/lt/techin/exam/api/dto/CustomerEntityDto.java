@@ -38,6 +38,9 @@ public class CustomerEntityDto extends CustomerDto {
         this.items = items;
     }
 
+    public CustomerEntityDto(long l, String vardas, String pavarde, String s, int i, Boolean aFalse, String s1) {
+    }
+
     public Long getId() {
         return id;
     }

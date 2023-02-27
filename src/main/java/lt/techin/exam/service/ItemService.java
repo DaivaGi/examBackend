@@ -44,12 +44,6 @@ public class ItemService {
 
         return itemRepository.save(toItem(itemDto));
     }
-
-//    public Comment update(Long id, Comment comment) {
-//        comment.setId(id);
-//        return itemRepository.save(comment);
-//    }
-
     public boolean deleteById(Long id) {
         if (itemRepository.existsById(id)) {
             itemRepository.deleteById(id);
@@ -57,44 +51,5 @@ public class ItemService {
         }
         return false;
     }
-
-//    private static final ExampleMatcher SEARCH_CONDITIONS_MATCH_ANY = ExampleMatcher
-//            .matchingAny()
-////            .withMatcher("date??", ExampleMatcher.GenericPropertyMatchers.exact())
-//            .withMatcher("name", ExampleMatcher.GenericPropertyMatchers.contains().ignoreCase())
-//            .withMatcher("type", ExampleMatcher.GenericPropertyMatchers.exact())
-//            .withIgnorePaths("id", "description",
-//                    "createdDate", "modifiedDate", "createdBy", "modifiedBy");
-//
-//    private Pageable pageable(int page, int pageSize, String sortBy, Sort.Direction sortDirection) {
-//        return PageRequest.of(page, pageSize, sortDirection, sortBy);
-//    }
-//
-//    @Transactional(readOnly = true)
-//    public Page<Comment> findByExample(String name, RoomType roomType, int page, int pageSize) {
-//
-//        Comment comment = new Comment();
-//        if (name != null) {
-//            comment.setName(name);
-//        }
-//        if (roomType != null) {
-//            comment.setType(roomType);
-//        }
-//
-//        Example<Comment> roomExample = Example.of(comment, SEARCH_CONDITIONS_MATCH_ANY);
-//
-//        Pageable pageable = PageRequest.of(page, pageSize);
-//
-//        return commentRepository.findAll(roomExample, pageable);
-//    }
-//
-//    private static final ExampleMatcher SEARCH_CONDITIONS_MATCH_ANY = ExampleMatcher
-//            .matchingAny()
-//            .withMatcher("birthDate", ExampleMatcher.GenericPropertyMatchers.exact())
-//            .withMatcher("firstName", ExampleMatcher.GenericPropertyMatchers.contains().ignoreCase())
-//            .withMatcher("lastName", ExampleMatcher.GenericPropertyMatchers.contains().ignoreCase())
-//            .withIgnorePaths("employeeId", "gender", "hireDate", "salaries", "titles");
-//
-
 
 }

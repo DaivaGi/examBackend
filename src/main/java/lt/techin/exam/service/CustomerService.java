@@ -34,23 +34,6 @@ public class CustomerService {
         return customerRepository.save(post);
     }
 
-//    public Customer update(Long id, Customer post) {
-//        var existingPost = customerRepository.findById(id)
-//                .orElseThrow(() -> new ExamValidationException("Post does not exist",
-//                        "id", "Post not found", id.toString()));
-//
-//        existingPost.setTitle(post.getTitle());
-//        existingPost.setText(post.getText());
-//        return customerRepository.save(existingPost);
-//    }
-//
-//    public boolean deleteById(Long id) {
-//        try {
-//            customerRepository.deleteById(id);
-//            return true;
-//        } catch (EmptyResultDataAccessException exception) {
-//            return false;
-//        }
-//    }
+
 
 }

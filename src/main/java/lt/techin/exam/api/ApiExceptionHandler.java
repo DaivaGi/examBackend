@@ -27,13 +27,6 @@ import static java.util.stream.Collectors.toList;
 @ControllerAdvice
 public class ApiExceptionHandler {
 
-//      pavyzdys response, Spring sugeneruoto validacijos pranesimo
-//        {
-//            "timestamp": "2023-01-10T17:04:12.995+00:00",
-//                "status": 500,
-//                "error": "Internal Server Error",
-//                "path": "/api/v1/animals/marked"
-//        }
 
     private static final Logger logger = LoggerFactory.getLogger(ApiExceptionHandler.class);
 
@@ -47,15 +40,8 @@ public class ApiExceptionHandler {
     @ExceptionHandler(IOException.class)
     public void handleIOException() {
         logger.error("IOException handler executed");
-        //returning 404 error code
-    }
 
-//@ResponseStatus(value = HttpStatus.INTERNAL_SERVER_ERROR, reason = "SQL query error")
-//    public void handleSQLGrammarException(SQLGrammarException exception) {
-//        logger.error("All Exceptions handler executed: {}. SQL: {}. Get SQL: {}",
-//                exception.getMessage(), exception.getSQLException(), exception.getSQL());
-//        //returning 404 error code
-//    }
+    }
 
     @ExceptionHandler(DataAccessException.class)
     public ResponseEntity<ErrorDto> handleDataAccessException(HttpServletRequest request, DataAccessException dataAccessException) {

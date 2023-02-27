@@ -43,18 +43,6 @@ public class CustomerController {
         return responseEntity;
     }
 
-
-//    @DeleteMapping("/{postId}")
-//    public ResponseEntity<Void> deleteAnimal(@PathVariable Long postId) {
-//        logger.info("Attempt to delete Animal by id: {}", postId);
-//
-//        boolean deleted = customerService.deleteById(postId);
-//        if (deleted) {
-//            return ResponseEntity.noContent().build();
-//        } else {
-//            return ResponseEntity.notFound().build();
-//        }
-//    }
     @PostMapping
     public ResponseEntity<CustomerEntityDto> createCustomer(@RequestBody CustomerDto customerDto) {
         var createdPost = customerService.create(toCustomer(customerDto));
@@ -62,17 +50,4 @@ public class CustomerController {
         return ok(toCustomerEntityDto(createdPost));
     }
 
-//
-//    @PatchMapping("/{postId}")
-//    public ResponseEntity<CustomerEntityDto> updatePost(@PathVariable Long postId, @RequestBody CustomerDto customerDto) {
-//        var updatedPost = customerService.update(postId, toPost(customerDto));
-//
-//        return ok(toPostEntityDto(updatedPost));
-//    }
-//
-//    @PostMapping("/{postId}/addcomment")
-//    @ResponseBody
-//    public Customer addCommentToPost(@PathVariable Long postId, @RequestParam Comment comment) {
-//        return customerService.createCommentToPost(postId, comment);
-//    }
 }
